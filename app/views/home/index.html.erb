@@ -1,0 +1,3 @@
+<%= simple_form_for(Codec.new) do |f| %>
+  <%= f.collection_check_boxes :codecs, Codec.all, :id, :codec %>
+<% end %>
