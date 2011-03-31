@@ -1,3 +1,9 @@
-<%= simple_form_for(Codec.new) do |f| %>
+<%= simple_form_for Trunk.new do |f| %>
+  
+  <!-- This helper doesn't work -->
   <%= f.collection_check_boxes :codecs, Codec.all, :id, :codec %>
+
+  <!-- With association works fine -->
+  <%= f.association :codecs, :collection => Codec.all.map{|codec| [codec.codec, codec.id]}, :as => :check_boxes %>
+  
 <% end %>

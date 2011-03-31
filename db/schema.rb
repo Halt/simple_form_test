@@ -10,12 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110331012027) do
+ActiveRecord::Schema.define(:version => 20110331101619) do
 
   create_table "codecs", :force => true do |t|
     t.string   "codec"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "trunk_codecs", :force => true do |t|
+    t.integer "trunk_id", :null => false
+    t.integer "codec_id", :null => false
+  end
+
+  create_table "trunks", :force => true do |t|
+    t.string "name", :null => false
   end
 
 end
